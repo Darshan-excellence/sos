@@ -570,7 +570,7 @@ No changes will be made to system configuration.
 
             preset_data = json.load(open(preset_path))
             for preset in preset_data.keys():
-                pd = PresetDefaults(preset)
+                pd = PresetDefaults(preset, opts=SoSOptions())
                 data = preset_data[preset]
                 pd.desc = data[DESC] if DESC in data else ""
                 pd.note = data[NOTE] if NOTE in data else ""
